@@ -276,11 +276,11 @@ def main():
         print(df.shape)
 
         time_stats(df)
-        input("Press Enter to view station statistics...")
+        input("Press Enter to view station statistics...\n")
         station_stats(df)
-        input("Press Enter to view trip duration statistics...")
+        input("Press Enter to view trip duration statistics...\n")
         trip_duration_stats(df)
-        input("Press Enter to view user statistics...")
+        input("Press Enter to view user statistics...\n")
         user_stats(df)
 
         while True:
@@ -303,7 +303,7 @@ def main():
                             raise ValueError
                         break
                     except ValueError:
-                        print('Invalid input! enter yes or no')
+                        print('Invalid input! enter yes or no\n')
 
                 if more.lower() == 'no':
                     break
