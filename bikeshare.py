@@ -10,6 +10,7 @@ CITY_DATA = {'chicago': 'chicago.csv',
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
+    The output of this function will be used to determine the filter type the user wants to adopt.
 
     Returns:
         (str) city - name of the city to analyze
@@ -93,6 +94,7 @@ def get_filters():
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
+    The output of the get_filters() method will determine what data to load into the dataframe.
 
     Args:
         (str) city - name of the city to analyze
@@ -262,6 +264,8 @@ def user_stats(df):
 
 
 def chunker(df):
+    """This function allows the user to view 5 more data"""
+    
     size = len(df)
     for i in range(0, size, 5):
         yield df[i:i + 5]
