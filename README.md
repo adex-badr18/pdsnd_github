@@ -26,5 +26,10 @@ The file that are used for the analysis include:
 - washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+It's important to give proper credits people and blogposts consulted during the project.
+
+- @dsteer :+1: Its a pleasure learning SQL from you on Udacity.
+- @junolee :+1: What a comprehensive Python Course you've designed on Udacity.
+- @richardkalehoff :+1: Thanks for your comprehensive git course on Udacity.
+- @stackoverflow :+1: What a life saving community!
 
