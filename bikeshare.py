@@ -268,6 +268,7 @@ def chunker(df):
 
 
 def main():
+    pd.set_option('display.max_columns',200)  # setting to expand collapsed pandas column
     while True:
         city, month, day = get_filters()
         print(city, month, day)
