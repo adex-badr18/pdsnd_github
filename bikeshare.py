@@ -10,6 +10,7 @@ CITY_DATA = {'chicago': 'chicago.csv',
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
+    The output of this function will be used to determine the filter type the user wants to adopt.
 
     Returns:
         (str) city - name of the city to analyze
@@ -93,6 +94,7 @@ def get_filters():
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
+    The output of the get_filters() method will determine what data to load into the dataframe.
 
     Args:
         (str) city - name of the city to analyze
@@ -262,12 +264,15 @@ def user_stats(df):
 
 
 def chunker(df):
+    """This function allows the user to view 5 more data"""
+    
     size = len(df)
     for i in range(0, size, 5):
         yield df[i:i + 5]
 
 
 def main():
+    pd.set_option('display.max_columns',200)  # setting to expand collapsed pandas column
     while True:
         city, month, day = get_filters()
         print(city, month, day)
@@ -275,11 +280,11 @@ def main():
         print(df.shape)
 
         time_stats(df)
-        input("Press Enter to view station statistics...")
+        input("Press Enter to view station statistics...\n")
         station_stats(df)
-        input("Press Enter to view trip duration statistics...")
+        input("Press Enter to view trip duration statistics...\n")
         trip_duration_stats(df)
-        input("Press Enter to view user statistics...")
+        input("Press Enter to view user statistics...\n")
         user_stats(df)
 
         while True:
@@ -302,7 +307,7 @@ def main():
                             raise ValueError
                         break
                     except ValueError:
-                        print('Invalid input! enter yes or no')
+                        print('Invalid input! enter yes or no\n')
 
                 if more.lower() == 'no':
                     break
